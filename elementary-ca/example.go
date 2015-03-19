@@ -3,10 +3,10 @@ package main
 import (
 	"ca/ca/elementary-ca/rules"
 	"fmt"
+	"time"
 )
 
 func main() {
-	// var center, left, right int
 	n := 20
 	world := make([]int, n)
 	currentWorld := make([]int, n)
@@ -20,12 +20,13 @@ func main() {
 	world[10] = 1
 	world[11] = 1
 	fmt.Println(world)
+	time.Sleep(time.Millisecond * 50)
 
-	T := 20
+	// T := 20
 
-	for j := 0; j < T; j++ {
+	for {
 		world = rules.Rule110(currentWorld, world, n)
 		fmt.Println(world)
+		time.Sleep(time.Millisecond * 50)
 	}
-
 }
