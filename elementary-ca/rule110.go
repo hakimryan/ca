@@ -6,7 +6,7 @@ import (
 
 func main() {
 	var center, left, right int
-	n := 20
+	n := 38
 	world := make([]int, n)
 	currentWorld := make([]int, n)
 
@@ -20,7 +20,7 @@ func main() {
 	world[11] = 1
 	fmt.Println(world)
 
-	T := 20
+	T := 50
 
 	for j := 0; j < T; j++ {
 		copy(currentWorld, world)
@@ -41,19 +41,19 @@ func main() {
 			case left == 0 && center == 0 && right == 0:
 				world[i] = 0
 			case left == 0 && center == 0 && right == 1:
-				world[i] = 0
+				world[i] = 1
 			case left == 0 && center == 1 && right == 0:
-				world[i] = 0
+				world[i] = 1
 			case left == 0 && center == 1 && right == 1:
 				world[i] = 1
 			case left == 1 && center == 0 && right == 0:
-				world[i] = 1
+				world[i] = 0
 			case left == 1 && center == 0 && right == 1:
 				world[i] = 1
 			case left == 1 && center == 1 && right == 0:
-				world[i] = 0
-			case left == 1 && center == 1 && right == 1:
 				world[i] = 1
+			case left == 1 && center == 1 && right == 1:
+				world[i] = 0
 			}
 		}
 		// fmt.Println(currentWorld)
